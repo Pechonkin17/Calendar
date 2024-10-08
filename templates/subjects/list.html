@@ -1,0 +1,25 @@
+{% extends "index.html" %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %} Список предметів - NULP 2024 {% endblock title %}</title>
+
+    <script src="{{ url_for('static', filename='js/subject/delete.js') }}" defer></script>
+</head>
+<body>
+{% block content %}
+<h1>Список предметів</h1>
+<ul>
+    {% for subject in subjects %}
+    <li>
+        <a href="{{ url_for('labs.view_labs', subject_id=subject.id) }}">{{ subject.title }}</a>
+        <a href="{{ url_for('subjects.edit_subject', subject_id=subject.id) }}">✏️ Редагувати</a>
+        <button onclick="confirmDelete({{ subject.id }})">Видалити</button>
+    </li>
+    {% endfor %}
+</ul>
+<a href="{{ url_for('subjects.create_subject') }}">Додати предмет</a>
+{% endblock content %}
+</body>
+</html>

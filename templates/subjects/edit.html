@@ -1,0 +1,25 @@
+{% extends "index.html" %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %} Оновлення предметів - NULP 2024 {% endblock title %}</title>
+
+    <script src="{{ url_for('static', filename='js/subject/edit.js') }}" defer></script>
+</head>
+<body>
+{% block content %}
+<h1>Редагувати предмет: {{ subject.title }}</h1>
+<form id="edit-form">
+    <label for="title">Назва:</label>
+    <input type="text" id="title" name="title" value="{{ subject.title }}">
+
+    <label for="description">Опис:</label>
+    <textarea id="description" name="description">{{ subject.description }}</textarea>
+
+    <button type="button" onclick="submitForm()">Зберегти зміни</button>
+</form>
+<a href="{{ url_for('subjects.index') }}">Назад до списку</a>
+{% endblock content %}
+</body>
+</html>
