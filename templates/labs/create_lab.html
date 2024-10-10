@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Створити лабораторну - NULP 2024</title>
+</head>
+<body>
+<form method="POST">
+    <h2>Створити лабораторну для предмету {{ subject.title }}</h2>
+    <input type="text" name="name" placeholder="Назва лабораторної" required>
+    <textarea name="description" placeholder="Опис лабораторної" required></textarea>
+    <input type="number" name="max_points" placeholder="Максимальна кількість балів" required>
+    <button type="submit">Створити лабораторну</button>
+</form>
+</body>
+</html>

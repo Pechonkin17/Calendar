@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="calendar" uuid="d1298545-a5ed-47a4-b3ac-6fa0f9cf757c">
+    <data-source source="LOCAL" name="calendar" uuid="3955d581-28e2-41c2-8ded-52621a094f7e">
       <driver-ref>sqlite.xerial</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
-      <jdbc-url>jdbc:sqlite:D:\1 Learning\Calendar\Calendar_Project\calendar.db</jdbc-url>
+      <jdbc-url>jdbc:sqlite:D:\1 Learning\Calendar\calendar.db</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
       <libraries>
         <library>

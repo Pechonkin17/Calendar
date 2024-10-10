@@ -2,6 +2,7 @@ from flask import Blueprint, render_template, request, redirect, url_for, jsonif
 from models.subject import Subject
 from base import Session
 
+
 subject_bp = Blueprint('subjects', __name__, template_folder='../templates/subjects')
 
 
@@ -18,16 +19,16 @@ def create_subject():
             session.add(new_subject)
             session.commit()
 
-            return redirect(url_for('subjects.index'))
+            return redirect(url_for('subjects.view_subjects'))
 
-    return render_template('subjects/create.html')
+    return render_template('subjects/create_subject.html')
 
 
 @subject_bp.route('/subjects')
-def index():
+def view_subjects():
     session = Session()
     subjects = session.query(Subject).all()
-    return render_template('subjects/list.html', subjects=subjects)
+    return render_template('subjects/view_subjects.html', subjects=subjects)
 
 
 @subject_bp.route('/subjects/edit/<int:subject_id>', methods=["GET", "PATCH"])
@@ -47,7 +48,7 @@ def edit_subject(subject_id):
             session.commit()
             return jsonify({"message": "Предмет успішно оновлено"}), 200
 
-        return render_template('subjects/edit.html', subject=subject)
+        return render_template('subjects/edit_subject.html', subject=subject)
 
 
 @subject_bp.route('/subjects/delete/<int:subject_id>', methods=["DELETE"])

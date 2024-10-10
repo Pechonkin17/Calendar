@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> Список предметів - NULP 2024</title>
+
+    <script src="{{ url_for('static', filename='js/subject/delete_subject.js') }}" defer></script>
+</head>
+<body>
+<h1>Список предметів</h1>
+<ul>
+    {% for subject in subjects %}
+    <li>
+        <a href="{{ url_for('labs.view_labs', subject_id=subject.id) }}">{{ subject.title }}</a>
+        <a href="{{ url_for('subjects.edit_subject', subject_id=subject.id) }}">✏️ Редагувати</a>
+        <button onclick="confirmDelete({{ subject.id }})">Видалити</button>
+    </li>
+    {% endfor %}
+</ul>
+<a href="{{ url_for('subjects.create_subject') }}">Додати предмет</a>
+</body>
+</html>

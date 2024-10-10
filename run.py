@@ -1,6 +1,6 @@
 from flask import Flask
 from routes import index_bp, subject_bp, lab_bp
-from base import create_db
+from base import create_db, drop_db
 
 app = Flask(__name__)
 

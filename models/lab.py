@@ -13,6 +13,5 @@ class Lab(Base):
     max_points: Mapped[int] = mapped_column(Integer)
     is_submitted: Mapped[bool] = mapped_column(Boolean, default=False)
     received_points: Mapped[int] = mapped_column(Integer, default=0)
-
     subject_id: Mapped[int] = mapped_column(ForeignKey("subjects.id"))
     subject: Mapped["Subject"] = relationship("Subject", back_populates="labs")
