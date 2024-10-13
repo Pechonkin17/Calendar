@@ -13,7 +13,7 @@
     <li>
         <a href="{{ url_for('labs.view_labs', subject_id=subject.id) }}">{{ subject.title }}</a>
         <a href="{{ url_for('subjects.edit_subject', subject_id=subject.id) }}">✏️ Редагувати</a>
-        <button onclick="confirmDelete({{ subject.id }})">Видалити</button>
+        <button onclick="confirmDelete_subject({{ subject.id }})">Видалити</button>
     </li>
     {% endfor %}
 </ul>

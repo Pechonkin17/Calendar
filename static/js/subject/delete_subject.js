@@ -1,4 +1,4 @@
-function confirmDelete(subjectId) {
+function confirmDelete_subject(subjectId) {
     if (confirm("Ви дійсно хочете видалити цей предмет?")) {
         fetch(`/subjects/delete/${subjectId}`, {
             method: 'DELETE'

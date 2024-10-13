@@ -8,14 +8,14 @@
 </head>
 <body>
 <h1>Редагувати предмет: {{ subject.title }}</h1>
-<form id="edit-form">
+<form id="edit-form-subject">
     <label for="title">Назва:</label>
     <input type="text" id="title" name="title" value="{{ subject.title }}">
 
     <label for="description">Опис:</label>
     <textarea id="description" name="description">{{ subject.description }}</textarea>
 
-    <button type="button" onclick="submitForm()">Зберегти зміни</button>
+    <button type="button" onclick="submitForm_subject()">Зберегти зміни</button>
 </form>
 <a href="{{ url_for('subjects.view_subjects') }}">Назад до списку</a>
 </body>

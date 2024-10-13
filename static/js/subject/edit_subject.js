@@ -1,5 +1,5 @@
-function submitForm() {
-    const form = document.getElementById('edit-form');
+function submitForm_subject() {
+    const form = document.getElementById('edit-form-subject');
     const formData = new FormData(form);
 
     fetch(window.location.href, {
