@@ -28,9 +28,9 @@ def create_lab(subject_id):
 
 @lab_bp.route('/labs/<int:subject_id>')
 def view_labs(subject_id):
-    session = Session()
-    subject = session.query(Subject).get(subject_id)
-    labs = session.query(Lab).filter_by(subject_id=subject_id).all()
+    with Session() as session:
+        subject = session.query(Subject).get(subject_id)
+        labs = session.query(Lab).filter_by(subject_id=subject_id).all()
     return render_template('labs/view_labs.html', labs=labs, subject=subject)
 
 

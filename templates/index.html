@@ -1,3 +1,5 @@
+{% extends "sample/base.html" %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,6 +7,16 @@
     <title>NULP 2024 </title>
 </head>
 <body>
-
+{% block content %}
+<div class="index-container">
+    <ul>
+        {% for subject in subjects %}
+            <li>
+                <a href="{{ url_for('labs.view_labs', subject_id=subject.id) }}">{{ subject.title }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}
 </body>
 </html>

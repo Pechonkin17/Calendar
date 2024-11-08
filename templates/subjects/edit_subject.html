@@ -9,6 +9,8 @@
 <body>
 <h1>Редагувати предмет: {{ subject.title }}</h1>
 <form id="edit-form-subject">
+    <input type="hidden" id="semester_id" name="semester_id" value="{{ subject.semester_id }}">
+
     <label for="title">Назва:</label>
     <input type="text" id="title" name="title" value="{{ subject.title }}">
 
@@ -17,6 +19,6 @@
 
     <button type="button" onclick="submitForm_subject()">Зберегти зміни</button>
 </form>
-<a href="{{ url_for('subjects.view_subjects') }}">Назад до списку</a>
+<a href="{{ url_for('subjects.view_subjects', semester_id=subject.semester_id) }}">Назад до списку</a>
 </body>
 </html>

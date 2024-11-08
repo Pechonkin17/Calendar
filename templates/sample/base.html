@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}">
+    {% block head %}
+    {% endblock %}
+</head>
+<body>
+
+<header>
+    {% include "sample/secondary/_navigation.html" %}
+</header>
+
+
+{% block content %}
+{% endblock %}
+
+</body>
+</html>

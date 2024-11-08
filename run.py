@@ -1,5 +1,5 @@
 from flask import Flask
-from routes import index_bp, subject_bp, lab_bp
+from routes import index_bp, subject_bp, lab_bp, semester_bp
 from base import create_db, drop_db
 
 app = Flask(__name__)
@@ -7,11 +7,26 @@ app = Flask(__name__)
 app.register_blueprint(index_bp)
 app.register_blueprint(subject_bp)
 app.register_blueprint(lab_bp)
+app.register_blueprint(semester_bp)
+
 
 create_db()
+
 
 if __name__ == "__main__":
     app.run(debug=True)
 
 
+"""
+
+    00. Не видаляться семестр. Не оновлюється та не видаляєьтся предмет. з лабами все працює
+    0. Зробити сторінку з відображенням усіх предметів - стилі css. Також зробити відображення предметів закресленою лінією, якщо в цьому предметі, всі лаби здані.
+    1. Виправити помилку при оновлені (якщо лаби не існує)
+    2. Виправити помилку, якщо видалили лабу, але переходим по її посиланню
+    3. Зробити макет головної сторінки
+    4. Створення предмету та їх відображення
+    5. Створення лабораторної та її відображення
+    6. Оновлення предмету
+    7. Оновлення лабораторної 
+"""
 # TODO 1. оновлення/видалення лаби 2. відображення всіх предметів на головній сторінці 3. кнопка 'адмін' для активації оновлення/видалення предмети/лаби 4. добавити html+css

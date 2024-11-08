@@ -1,0 +1,19 @@
+nav {
+    display: flex;
+    justify-content: center;
+    padding: 25px;
+    background-color: #6B99C3;
+}
+
+nav a{
+    font-family: Corbel;
+    font-size: 20px;
+    color: white;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+nav a:hover{
+    color: black;
+}
+
