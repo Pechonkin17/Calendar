@@ -1,6 +1,6 @@
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker, DeclarativeBase
-
+from functools import wraps
 
 engine = create_engine(
     "sqlite:///calendar.db",
@@ -17,3 +17,11 @@ def create_db():
 
 def drop_db():
     Base.metadata.drop_all(engine)
+
+
+def db_session(func):
+    @wraps(func)
+    def wrapper(*args, **kwargs):
+        with Session() as session:
+            return func(session, *args, **kwargs)
+        return wrapper
